@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="jqueryform.com">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reporte Visita en Terreno APP</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/vendor.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container" style="margin-bottom:30px;">
+	
+	
+	<img src="img/logo.png" style="width:300px; max-width:100%; height: auto; margin:15px 0;" />
+	<form id="form" method='post'>
+		<ul class="nav nav-tabs " style="margin:20px 0;">
+			<li class="menubtn active" data-section="moment"><a href="#">General </a></li>
+			<li class="menubtn" data-section="servicio"><a href="#">Servicio</a></li>
+			<li class="menubtn" data-section="representante"><a href="#">Cliente</a></li>
+			<li class="menubtn" data-section="finalizar"><a href="#">Enviar</a></li>
+		</ul>
+
+		<!-- ---------------------------------- FECHA Y HORA ------------------------------------------------------ -->
+		<section class="moment">
+			
+			<div class="form-group">
+				<label class="seccion-titulo">Fecha y Locación</label>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Fecha</label>
+				<div class="input-group input-append date" id="moment_fecha">
+					<span class="input-group-addon add-on"><i class="glyphicon glyphicon-th"></i> </span>
+					<input type="text" class="form-control add-on" name="moment_fecha" placeholder="Fecha de Visita" />
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Hora Entrada</label>
+				<div class="input-group input-append date" id="moment_entrada">
+					<span class="input-group-addon  add-on"><i class="glyphicon glyphicon-time"></i></span>
+					<input type="text" class="form-control add-on" name="moment_entrada" placeholder="Hora Entrada" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="sr-only">Hora Salida</label>
+				<div class="input-group input-append date" id="moment_salida">
+					<span class="input-group-addon  add-on"><i class="glyphicon glyphicon-time"></i></span>
+					<input type="text" class="form-control add-on" name="moment_salida" placeholder="Hora Salida" />
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Cliente / Empresa</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+					<input type="text" class="form-control" name="moment_cliente" placeholder="Cliente / Empresa" />
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Local / Sede</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+					<input type="text" class="form-control" name="moment_sede" placeholder="Local / Sede" />
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Ubicación GPS</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+					<input type="text" class="form-control gps" name="moment_gps" placeholder="Ubicación GPS" value="" readonly />
+				</div>
+			</div>	
+			
+			<div class="form-group text-right navbtn1">
+				<button step="1" type="button" class="btn btn-primary btn-lg navbtn" data-section="servicio">
+					Siguiente <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>	
+				</button>
+			</div>	
+			
+		</section>
+
+
+
+		<!-- ------------------------------ SELECCION DE SERVICIO -------------------------------------------------- -->
+		<section class="servicio" style="display: none;">
+			
+			<div class="form-group">
+				<label class="seccion-titulo">Servicio</label>
+			</div>
+	
+			<div class="form-group">
+				<label class="sr-only">Tipo de Servicio</label>
+				<select class="form-control servicio" name="servicio">
+					<option value="">- Selecciona -</option>
+					<option value="preventiva">Asistencia Preventiva</option>
+					<option value="correctiva">Asistencia Correctiva</option>
+					<option value="upgrade">Upgrade / Mejora</option>
+					<option value="otros">Otros</option>
+				</select>
+			</div>
+			
+				<!-- ----------------------------------- ASISTENCIA PREVENTIVA --------------------------------------------------------- -->
+				<section class="preventiva" style="display: none;">
+					
+					<div class="form-group">
+						<label class="seccion-titulo">&raquo; Asistencia Preventiva</label>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Estado Equipos</label>
+						<textarea class="form-control" name="servicio_1_1" rows="3"></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Estado Software</label>
+						<textarea class="form-control" name="servicio_1_2" rows="3"></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Estado General / Otras Observaciones</label>
+						<textarea class="form-control" name="servicio_1_3" rows="3"></textarea>
+					</div>
+					
+				</section>
+		
+		
+		
+				<!-- ------------------------------------- ASISTENCIA CORRECTIVA --------------------------------------------------- -->
+				<section class="correctiva" style="display: none;">
+		
+					<div class="form-group">
+						<label class="seccion-titulo">&raquo; Asistencia Correctiva</label>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Errores reportados por cliente</label>
+						<textarea class="form-control" name="servicio_2_1" rows="3"></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Errores reportados por técnico</label>
+						<textarea class="form-control" name="servicio_2_2" rows="3"></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">¿Se logró dar solución al problema?</label>
+						<select class="form-control" name="servicio_2_3">
+							<option value="">- Selecciona -</option>
+							<option value="Si">Si</option>
+							<option value="No">No</option>
+							<option value="Parcialmente">Parcialmente</option>
+						</select>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Detalles / Otras Observaciones</label>
+						<textarea class="form-control" name="servicio_2_4" rows="3"></textarea>
+					</div>
+		
+				</section>
+		
+		
+		
+				<!-- --------------------------------------- UPGRADE / MEJORAS -------------------------------------------- -->
+				<section class="upgrade" style="display: none;">
+		
+					<div class="form-group">
+						<label class="seccion-titulo">&raquo;  Upgrade / Mejoras</label>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Situación Previa</label>
+						<textarea class="form-control" name="servicio_3_1" rows="3"></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Situación Posterior al servicio</label>
+						<textarea class="form-control" name="servicio_3_2" rows="3"   ></textarea>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Detalle Integración / Otras Observaciones</label>
+						<textarea class="form-control" name="servicio_3_3" rows="3"   ></textarea>
+					</div>
+		
+				</section>
+								
+				
+				<! ----------------------------------------- OTROS ----------------------------------------------------- ->
+				<section class="otros" style="display: none;">
+		
+					<div class="form-group">
+						<label class="seccion-titulo">&raquo;  Otros</label>
+					</div>
+			
+					<div class="form-group">
+						<label class="control-label">Estado Situación / Actividad</label>
+						<textarea class="form-control" name="servicio_4_1" rows="3"></textarea>
+					</div>
+		
+				</section>
+				
+			
+			<div class="form-group navbtn2" style="display: none;">
+				<button step="2" type="button" class="btn btn-primary btn-lg navbtn" data-section="moment">
+					<span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>	Anterior
+				</button>
+			
+				<button step="2" type="button" class="btn btn-primary btn-lg navbtn" style="float:right;" data-section="representante">
+					Siguiente <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>	
+				</button>
+			</div>
+		</section>
+
+
+
+		<!-- ------------------------------ REPRESENTANTE EN TERRENO ----------------------------------------------- -->
+		<section class="representante" style="display: none;">		
+			<div class="form-group">
+				<label class="seccion-titulo">Representante en Terreno</label>
+			</div>
+	
+			<div class="form-group">
+				<label class="control-label">¿Se encontraba un representante del lugar / cliente?</label>
+				<select class="form-control representante" name="representante">
+					<option value="">- Selecciona -</option>
+					<option value="Si">Si</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+	
+			<div class="form-group si_representante" style="display: none;">
+				<label class="sr-only">Nombre del Representante</label>
+				<input type="text" class="form-control" name="representante_nombre" value="" placeholder="Nombre del Representante"  />
+			</div>
+	
+			<div class="form-group si_representante" style="display: none;">
+				<label class="sr-only">Cargo del Representante</label>
+				<input type="text" class="form-control" name="representante_cargo" value="" placeholder="Cargo del Representante"  />
+			</div>
+	
+			<div class="form-group si_representante" style="display: none;">
+				<label class="control-label">Observaciones del Representante</label>
+				<textarea class="form-control" name="representante_observaciones" rows="3"></textarea>
+			</div>
+			
+			<div class="form-group navbtn3" style="display: none;">
+				<button step="3" type="button" class="btn btn-primary btn-lg navbtn" data-section="servicio">
+					<span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>	Anterior
+				</button>
+			
+				<button step="3" type="button" class="btn btn-primary btn-lg navbtn" style="float:right;" data-section="finalizar">
+					Siguiente <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>	
+				</button>
+			</div>
+		</section>
+
+		
+		
+		<!-- ------------------------------------- FINALIZAR -------------------------------------------------------- -->
+		<section class="finalizar" style="display: none;">
+			<div class="form-group">
+				<label class="seccion-titulo">Finalizar</label>
+			</div>
+	
+			<div class="form-group">
+				<label class="control-label">Otras observaciones</label>
+				<textarea class="form-control" name="otros" rows="3"></textarea>
+			</div>
+			
+			<input type="hidden" name="usuario" value="0" id="user_id" />
+			<input type="hidden" name="appversion" value="1.0" />
+			
+			<div class="form-group submit" style="float:right;">
+				<button step="3" type="button" class="btn btn-primary btn-lg navbtn" data-section="representante">
+					<span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>	Anterior
+				</button>
+				
+				<button id="enviar_form" type="submit" class="btn btn-primary btn-lg" style="z-index: 1;">
+					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+					Enviar Reporte
+				</button>
+			</div>
+		</section>
+		
+		
+	
+		
+	</form>
+
+	
+	<div id="box-ok"    class="alert alert-success" role="alert" style="display: none;"></div>
+	<div id="box-info"  class="alert alert-info"    role="alert" style="display: none;"></div>
+	<div id="box-error" class="alert alert-danger"  role="alert" style="display: none;"></div>
+
+
+	<!-- ------------------------------------ SUBIR FOTO -------------------------------------------------------- -->
+	<div class="subirfoto" style="display: none;" data-reporte="0">
+		<div class="form-group foto_botones">
+			<button type="button" id="capturep" class="btn btn-info btn-lg">
+				<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+				Tomar Foto
+			</button>
+			<button type="button" id="getp" class="btn btn-info btn-lg">
+				<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+				Seleccionar de Librería
+			</button>
+		</div>
+	</div>
+	
+
+	
+	
+	<p class="copyright" style="display: block;">&copy;2016 Ludique Comunicaciones Ltda.</p>
+
+</div>
+
+
+
+    
+    
+<div class="container" style="display:none;">
+	<h3>Reporte enviado. Gracias por tu soporte.</h3>
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="cordova.js"></script>
+<script src="js/vendor.js"></script>
+<script src="js/qreport.js"></script>
+<script src="js/foto.js"></script>
+<!-- <script src="http://192.168.0.12:8080/target/target-script-min.js#anonymous"></script> -->
+<script>
+	$("#user_id").val(localStorage.getItem("id"));
+</script>
+</body>
+</html>
